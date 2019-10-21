@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div id="main-title-box">
+    <h1 id="main-title">{{ main_title }}</h1>
+    </div>
+
+ 
+    <div id="main-box"> 
+    {% if main_title == "Build a Blog" %}
+        {% for b in blog %}
+        <h2><a href="/?id={{ b.id }}">{{ b.title }}</a></h2>
+        <p>{{ b.body }}</p>
+        <hr>
+        {% endfor %}
+    </div>
+
+
+    {% else %}
+    <h2><a href="/?id={{ blog_id }}">{{ main_title }}</a></h2>
+    <p>{{ body }}</p>
+    <hr>
+    {% endif %}
+    
+
+{% endblock %}
