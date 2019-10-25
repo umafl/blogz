@@ -1,0 +1,9 @@
+div{
+    border-bottom: 3px;
+}
+.auth{
+    font-style: italic;
+}
+.error{
+    color: red;
+}

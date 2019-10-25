@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    </head>
+
+<body>
+    <div id="header">
+        <span>
+            <a href="/">Home</a>
+        </span>
+        <span>
+            <a href="/blog">All Blog Posts</a>
+        </span>
+        <span>
+            <a href="/newpost">New Post</a>
+        </span>
+    </div>
+
+    <div id="main-title-box">
+    <h1 id="main-title">{{ main_title }}</h1>
+    </div>
+
+    <div style='float: right'>
+        {% if 'username' in session %}
+            {{ session['username'] }}
+            <form action="/logout" method="post">
+            <input type="submit" value="Log Out" />
+            </form>
+        {% else %}
+            <a href="login">login</a> | <a href="signup">signup</a>
+        {% endif %}
+    </div>
+    
+    <div id="background">
+
+      {% block content %}
+
+    {% endblock %}

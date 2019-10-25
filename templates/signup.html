@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Signup for new account</h1>
+    <form class="form" action="/signup" method="post">
+        <table>
+            <tr>
+                <td><label for="username">Username</label></td>
+                <td>
+                    <input name="username" type="text" value="{{ request.form['username'] }}">
+                    <span class="error">{0}</span>
+                    <span class="error">{3}</span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td>
+                    <input name="password" type="password">
+                    <span class="error">{1}</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="verify">Verify Password</label></td>
+                <td>
+                    <input name="verify" type="password">
+                    <span class="error">{2}</span>
+                </td>
+            </tr>
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}
